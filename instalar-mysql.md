@@ -13,11 +13,11 @@
     ~~~
 4. Acceso en local 
     ~~~
-    mysql -u -root -p
+    mysql -u root -p
     ~~~
 5. Acceso desde otros equipos  
     ~~~
-    mysql -h localhost -u -root -p
+    mysql -h localhost -u root -p
     ~~~
 
 ## MySQL Workbench
@@ -25,6 +25,6 @@
 2. Habilitar los permisos para password para workbeanch
 3. En MySQL tenemos que dar permisos para dar acceso al usuario root 
     ~~~
-    mysql -u -root -p
+    mysql -u root -p
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
     ~~~
