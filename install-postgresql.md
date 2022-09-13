@@ -51,27 +51,37 @@ Para instalar PgAdmin nesecitaremos `curl` y lo podemos instalar con el siguient
 sudo apt install curl 
 ~~~
 
-Cree la configuración del repositorio de archivos.
+
+Instale la clave pública para el repositorio (si no lo hizo previamente):
 
 ~~~bash
 sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
 ~~~
 
+Cree el archivo de configuración del repositorio:
+
 ~~~bash
 sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
 ~~~
 
+
+Instalar pgAdmin, instalar para los modos de escritorio y web:
 ~~~bash
 sudo apt install pgadmin4
 ~~~
 
-~~~bash
-sudo apt install pgadmin4-desktop
-~~~
+## Ejecutar PgAdmin4 
+Buscas en tus aplicaciónes logo de PgAdmin o PotgreSQL, luego colocas los credenciales. a `Add New Server`,  
 
-~~~bash
-sudo apt install pgadmin4-web
-~~~
+- En general Nombre de sevidor. 
+- En Connection Host; `localhost`  el pueto pordefecto. 
+- En Username `alexroel` y `password`
+
+
+
+
+
+
 
 
 
