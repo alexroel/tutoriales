@@ -35,6 +35,7 @@ Ahora crea una base de datos con el mismo nombre de usuario `alexroel`. Para pod
 
 ~~~sql
 CREATE DATABASE alexroel OWNER alexroel;
+\du
 ~~~
 
 Salir de PostgreSQL
@@ -68,7 +69,23 @@ Usar la base de datos creada.
 \c tutos_db
 ~~~
 
-Ahora puedes crear tablas y administrar tu base de datos.
+Ahora puedes crear tablas de ejemplo dentro de la base de datos `tutos_db`.
+~~~sql
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100)
+);
+~~~
+
+Listar tablas creadas.
+~~~sql
+\dt
+~~~
+
+Para salir de PostgreSQL.
+~~~sql
+\q
+~~~
 
 ## Instalar PgAdmin 
 Para instalar PgAdmin nesecitaremos `curl` y lo podemos instalar con el siguiente comando. 
