@@ -7,28 +7,48 @@ Con este comando se descargará y se instalara en su ultima versión.
 sudo apt-get -y install postgresql postgresql-contrib
 ~~~
 
+Comprobar la versión instalada de PostgreSQL.
+~~~bash
+psql --version
+~~~
+
 Ingrese a PostgreSQL con el siguiente comando 
 ~~~bash
-sudo su - postgres
-
+sudo -i -u postgres
 psql
 ~~~
 
-Crea el usuario y la contraseña para administrar bases de datos  con PostgreSQL. 
+Crea el usuario propio y la contraseña para administrar bases de datos  con PostgreSQL. 
 
-~~~bash
-create user alexroel with password '123456';
+~~~sql
+CREATE USER alexroel WITH PASSWORD '123456';
 ~~~
+
+- Esta es una contraseña de ejemplo, se recomienda usar una contraseña segura.
 
 Dar permisos de super usuario a `alexroel`.
-~~~bash
-alter user alexroel with superuser;
+~~~sql
+ALTER USER alexroel WITH superuser;
 ~~~
+
+Ahora crea una base de datos con el mismo nombre de usuario `alexroel`. Para poder administrar la base de datos con el usuario creado.
+
+~~~sql
+CREATE DATABASE alexroel OWNER alexroel;
+~~~
+
+Salir de PostgreSQL
+~~~sql
+\q
+exit
+~~~
+
 ## Crear tu primer base de datos con PostgreSQL 
 Podemos crear nuestro primer base de datos con el siguiente comando para el usuario `alexroel`. 
 
+Primero ingresamos con el usuario creado.
 ~~~bash
-create database tutorial_db owner alexroel; 
+psql -U alexroel -h localhost 
 ~~~ 
 
 Listar base de datos. 
@@ -38,11 +58,17 @@ Listar base de datos.
 \list
 ~~~
 
-Para salir
-~~~bash
-exit
+Ahora creamos una base de datos llamada `tutos_db`.
+~~~sql
+CREATE DATABASE tutos_db;
 ~~~
 
+Usar la base de datos creada.
+~~~sql
+\c tutos_db
+~~~
+
+Ahora puedes crear tablas y administrar tu base de datos.
 
 ## Instalar PgAdmin 
 Para instalar PgAdmin nesecitaremos `curl` y lo podemos instalar con el siguiente comando. 
