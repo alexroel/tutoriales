@@ -20,8 +20,8 @@ Visual Studio Code (VS Code) es un editor de código fuente desarrollado por Mic
    ```json
    "editor.fontFamily": "RobotoMono Nerd Font",
    "editor.fontSize": 16,
-  "terminal.integrated.fontFamily": "RobotoMono Nerd Font Mono",
-  "terminal.integrated.fontWeight": "600",
+   "terminal.integrated.fontFamily": "RobotoMono Nerd Font Mono",
+   "terminal.integrated.fontWeight": "600",
    "terminal.integrated.fontSize": 16,
    ```
 5. Quitar sugerencia de punto de interrupción
